@@ -3,7 +3,7 @@
  * main - the entry point in the program
  * void : no arguments
  *
- * Return (0): seccess
+ * Return :0 (seccess)
  */
 int main(void)
 {
