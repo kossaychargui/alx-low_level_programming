@@ -1,9 +1,8 @@
 #include<stdio.h>
 /**
- * main - the entry point in the program
- * void : no arguments
+ * main - A program that prints a line with puts fuction
  *
- * Return :0 (seccess)
+ * Return: 0 (seccess)
  */
 int main(void)
 {
