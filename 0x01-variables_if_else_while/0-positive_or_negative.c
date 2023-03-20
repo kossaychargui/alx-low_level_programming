@@ -4,27 +4,29 @@
 
 #include<stdio.h>
 /**
- * main - a function that prints a random number every time it's excuted and 
- * tells wich is postive or negative
+ * main - Function prints if number is postive, zero or negative
+ *
  *Return:(0) success
  */
 int main(void)
 {
-	int x;
+	int n;
 
 	srand(time(0));
-	x = rand() - RAND_MAX / 2 ;
-	if (x > 0)
+	n = rand() - RAND_MAX / 2;
+
+	if (n > 0)
 	{
-	printf("%d is positive\n", x);
+	printf("%d is positive\n", n);
 	}
-	else if (x < 0)
+	else if (n < 0)
 	{
-	printf("%d is negative\n", x);
+	printf("%d is negative\n", n);
 	}
 	else
 	{
-	printf("%d is zero\n", x);
-	} 
+	printf("%d is zero\n", n);
+	}
 	return (0);
+
 }
