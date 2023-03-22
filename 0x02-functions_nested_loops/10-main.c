@@ -6,6 +6,7 @@
  *
  * Return: Always 0.
  */
+int add(int x, int y);
 int main(void)
 {
 	int n;
