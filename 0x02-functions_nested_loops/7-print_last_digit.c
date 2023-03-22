@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 
 /**
  * print_last_digit - function that prints the last digit of a number.
@@ -13,6 +14,6 @@ int print_last_digit(int x)
 
 	h = x % 10;
 
-	_putchar(h + '0');
-	return (x % 10);
+	_putchar('0' + h);
+	return (abs(h));
 }
