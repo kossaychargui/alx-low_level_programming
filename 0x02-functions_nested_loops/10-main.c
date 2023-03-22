@@ -22,3 +22,7 @@ int main(void)
 	printf("%d\n", n);
 	return (0);
 }
+int add(int x, int y)
+{
+	return (x + y);
+}
