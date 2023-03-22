@@ -1,14 +1,6 @@
 #include "main.h"
 #include <stdio.h>
-/**
- * add - function that adds two integers
- *
- * @x: the first opperand
- * @y: the second opperand
- *
- * return: the sum
- */
-int add(int x, int y);
+int add(int, int);
 /**
  * main - check the code
  *
@@ -21,8 +13,4 @@ int main(void)
 	n = add(89, 9);
 	printf("%d\n", n);
 	return (0);
-}
-int add(int x, int y)
-{
-	return (x + y);
 }
