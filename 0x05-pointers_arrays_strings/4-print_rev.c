@@ -9,17 +9,11 @@
  */
 void print_rev(char *s)
 {
-	int i, j, len;
-	char tmp;
+	int i;
 
-	len = strlen(s) / 2;
-	j = strlen(s);
-	for (i = 0; i <= len; i++)
+	for (i = strlen(s) - 1; i >= 0; i--)
 	{
-		tmp = s[i];
-		s[i] = s[j];
-		s[j] = tmp;
-		j--;
+		printf("%c", *(str + i));
 	}
-	puts(s);
+	putchar('\n');
 }
