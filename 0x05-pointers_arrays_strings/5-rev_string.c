@@ -1,5 +1,10 @@
 #include <string.h>
-
+/**
+ * rev_string - function that reverse a string
+ *
+ * @s: string to reverse
+ *
+ */
 void rev_string(char *s)
 {
 	int len, i, j;
