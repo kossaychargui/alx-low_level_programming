@@ -13,7 +13,7 @@ void print_rev(char *s)
 	char tmp;
 
 	len = strlen(s) / 2;
-	j = strlent(s);
+	j = strlen(s);
 	for (i = 0; i <= len; i++)
 	{
 		tmp = s[i];
@@ -21,5 +21,5 @@ void print_rev(char *s)
 		s[j] = tmp;
 		j--;
 	}
-	puts(str);
+	puts(s);
 }
