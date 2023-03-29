@@ -30,7 +30,7 @@ char *cap_string(char *a)
 			case ')':
 			case '{':
 			case '}':
-				for (j = i; j < strlen(a); j++)
+				for (j = i; j <= i + 1; j++)
 				{
 					if (a[i] == ' ')
 					{
