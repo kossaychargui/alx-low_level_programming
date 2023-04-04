@@ -3,7 +3,6 @@
  *
  * @s: string to set to
  * @to: string to set
- *
  */
 void set_string(char **s, char *to)
 {
