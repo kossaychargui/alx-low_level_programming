@@ -10,4 +10,6 @@ void _print_rev_recursion(char *s)
 
 	len = strlen(s) - 1;
 	_putchar(*(s + len));
+	s--;
+	_print_rev_recursion(s);
 }
