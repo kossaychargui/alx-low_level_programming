@@ -22,6 +22,10 @@ char *_strdup(char *str)
 	}
 	size = strlen(str);
 	dup = (char *) malloc(sizeof(char) * size);
+	if (dup == NULL)
+	{
+		return (NULL);
+	}
 	strcpy(dup, str);
 	return (dup);
 	free(dup);
