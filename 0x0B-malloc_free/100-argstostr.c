@@ -12,8 +12,9 @@
  */
 int _size(int ac, char **av)
 {
-	int i, j;
+	int i, j, size;
 
+	size = 0;
 	for (i = 0; i < ac; i++)
 	{
 		j = 0;
