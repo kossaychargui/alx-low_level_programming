@@ -35,8 +35,8 @@ char *str_concat(char *s1, char *s2)
 	{
 		return (NULL);
 	}
-	str = s1;
-	(str + size1) = s2;
+	strcat(s1, s2);
+	strcat(str, s1);
 	return (str);
 	free(str);
 }
