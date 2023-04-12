@@ -12,19 +12,19 @@
  */
 int _size(int ac, char **av)
 {
-	int i, j, size;
+	int i, j, s;
 
-	size = 0;
+	s = 0;
 	for (i = 0; i < ac; i++)
 	{
 		j = 0;
 		while (av[i][j] != 0)
 		{
-			size++;
+			s++;
 			j++;
 		}
 	}
-	return (size);
+	return (s);
 }
 /**
  * argstostr - funtion that concatenates all the arguments of a program.
