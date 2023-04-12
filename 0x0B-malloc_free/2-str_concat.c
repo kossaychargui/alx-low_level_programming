@@ -14,18 +14,16 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	int size, size1, size2;
+	int size, size1, size2, i, j;
 	char *str;
 
 	if (s1 == NULL)
 	{
 		s1 = "";
-		size1 = 0;
 	}
 	if (s2 == NULL)
 	{
 		s2 = "";
-		size2 = 0;
 	}
 	size1 = strlen(s1);
 	size2 = strlen(s2);
@@ -35,8 +33,18 @@ char *str_concat(char *s1, char *s2)
 	{
 		return (NULL);
 	}
-	strcat(s1, s2);
-	strcpy(str, s1);
+	i = j = 0;
+	while (s1[i] != '\0')
+	{
+		str[i] = s1[i];
+		i++
+	}
+	while (s2[j] != '\0')
+	{
+		str[i] = s2[j];
+		i++;
+		j++
+	}
+	str[i] = '\0';
 	return (str);
-	free(str);
 }
