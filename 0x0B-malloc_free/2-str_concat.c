@@ -14,21 +14,29 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	int size;
+	int size, size1, size2;
 	char *str;
 
-	if (s1 == NULL || s2 == NULL)
+	if (s1 == NULL)
 	{
-		return (NULL);
+		s1 = "";
+		size1 = 0;
 	}
-	size = strlen(s1) + strlen(s2) + 1;
+	if (s2 == NULL)
+	{
+		s2 = "";
+		size2 = 0;
+	}
+	size1 = strlen(s1);
+	size2 = strlen(s2);
+	size = size1 + size2 + 1;
 	str = (char *)malloc(sizeof(char) * size);
 	if (str == NULL)
 	{
 		return (NULL);
 	}
-	strcat(s1, s2);
-	strcat(str, s1);
+	str = s1;
+	str + strlen(s1) = s2;
 	return (str);
 	free(str);
 }
