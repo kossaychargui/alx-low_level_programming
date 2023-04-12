@@ -36,7 +36,7 @@ char *str_concat(char *s1, char *s2)
 		return (NULL);
 	}
 	str = s1;
-	(str + strlen(s1)) = s2;
+	(str + size1) = s2;
 	return (str);
 	free(str);
 }
