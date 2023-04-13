@@ -2,31 +2,6 @@
 #include <stdlib.h>
 
 /**
- * _size - function that returns the size of all the arguments.
- *
- * @ac: number of arguments.
- * @av: array of strings hold the arguments.
- *
- * Return: the size.
- *
- */
-int _size(int ac, char **av)
-{
-	int i, j, s;
-
-	s = 0;
-	for (i = 0; i < ac; i++)
-	{
-		j = 0;
-		while (av[i][j] != 0)
-		{
-			s++;
-			j++;
-		}
-	}
-	return (s);
-}
-/**
  * argstostr - funtion that concatenates all the arguments of a program.
  *
  * @ac: number of arguments passed in the command line.
@@ -47,7 +22,16 @@ char *argstostr(int ac, char **av)
 	{
 		return (NULL);
 	}
-	size = _size(ac, av);
+	size = 0;
+	for (i = 0; i < ac; i++)
+	{
+		j = 0;
+		while (av[i][j] != '\0')
+		{
+			size++;
+			j++;
+		}
+	}
 	str = (char *)malloc(sizeof(char) * (size + 1 + ac));
 	if (str == NULL)
 	{
