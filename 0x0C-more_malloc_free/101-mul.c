@@ -13,21 +13,24 @@
  */
 int _isdigit(char **argv, int i)
 {
-	int j;
+	int j, test;
 
+	test = 1;
 	j = 0;
 	while (argv[i][j] != '\0')
 	{
 		if (isdigit(argv[i][j] != 1))
 		{
-			return (0);
+			test = 0;
+			break;
 		}
 		j++;
 	}
-	return (1);
+	return (test == 1);
 }
 /**
- * main - entry point of the program . that programs multiplies two positive numbers.
+ * main - entry point of the program . that programs multiplies two positive
+ *  numbers.
  *
  * @argc: number of arguments passed in the command line.
  * @argv: array of strings passed in the command line .
@@ -56,5 +59,6 @@ int main(int argc, char **argv)
 		num2 = atoi(argv[2]);
 		mul = num1 * num2;
 	}
-	return (mul);
+	printf("%d\n", mul);
+	return (0);
 }
