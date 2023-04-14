@@ -13,20 +13,18 @@
  */
 int _isdigit(char **argv, int i)
 {
-	int j, test;
+	int j;
 
-	test = 1;
 	j = 0;
 	while (argv[i][j] != '\0')
 	{
-		if (isdigit(argv[i][j] != 1))
+		if (isdigit(argv[i][j]) == 0)
 		{
-			test = 0;
-			break;
+			return (0);
 		}
 		j++;
 	}
-	return (test == 1);
+	return (1);
 }
 /**
  * main - entry point of the program . that programs multiplies two positive
