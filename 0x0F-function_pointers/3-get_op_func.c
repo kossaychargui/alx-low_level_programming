@@ -19,9 +19,9 @@ int (*get_op_func(char *s))(int, int)
 		{"%", op_mod},
 		{NULL, NULL}
 	};
-	int i;
+	int i, result;
 
-	i = s;
-	return (ops[i]);
+	i = *s;
+	result = ops[]
 }
 
