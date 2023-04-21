@@ -1,5 +1,6 @@
-#include "varidid_functions.h"
+#include "variadic_functions.h"
 #include <stdio.h>
+#include <stdarg.h>
 
 /**
  * print_numbers - function that prints numbers .
@@ -10,17 +11,19 @@
  */
 void print_numbers(const char *seperator, unsigned int n, ...)
 {
-	int i;
+	unsigned int i, j;
 	va_list ap;
 
 	va_start(ap, n);
-	for (i = 0; i < n; i++)
+	j = 0;
+	for (i = n; j < n; i = va_arg(ap, unsigned int))
 	{
-		putchar(va_arg(ap, unsigned int) + '0');
+		putchar(i % 10 + '0');
 		if (seperator != NULL)
 		{
-			putchar(seperator);
+			putchar(seperator[0]);
 		}
+		j++;
 	}
 	putchar('\n');
 	va_end(ap);
