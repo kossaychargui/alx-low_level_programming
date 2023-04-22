@@ -22,7 +22,6 @@ void print_numbers(const char *seperator, unsigned int n, ...)
 		{
 			printf("%s", seperator);
 		}
-		j++;
 	}
 	putchar('\n');
 	va_end(ap);
