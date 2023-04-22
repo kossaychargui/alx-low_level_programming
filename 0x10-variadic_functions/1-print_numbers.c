@@ -18,8 +18,8 @@ void print_numbers(const char *seperator, unsigned int n, ...)
 	j = 0;
 	for (i = n; j < n; i = va_arg(ap, unsigned int))
 	{
-		putchar(i % 10 + '0');
-		if (seperator != NULL)
+		putchar(i + '0');
+		if ((seperator != NULL) && (j != n - 1))
 		{
 			putchar(seperator[0]);
 		}
