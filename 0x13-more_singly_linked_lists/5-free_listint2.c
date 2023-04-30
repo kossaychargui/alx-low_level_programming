@@ -9,7 +9,7 @@
  */
 void free_listint2(listint_t **head)
 {
-	listint_t *current, *next, *new_head;
+	listint_t *current, *next, *new_head __attribute__((unused));
 
 	if (head == NULL)
 	{
@@ -17,14 +17,15 @@ void free_listint2(listint_t **head)
 	}
 	else
 	{
-		current = head->next;
-		new_head = head;
+		current = (*head)->next;
+		new_head = *head;
 		while (current != NULL)
 		{
 			next = current->next;
 			free(current);
 			current = next;
 		}
+		free(new_head);
 		new_head = NULL;
 	}
 }
