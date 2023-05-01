@@ -3,10 +3,9 @@
 void first(void) __attribute__((constructor));
 
 /**
- * main - function that prints You're beat! and yet, you must allow,\nI bore
- * my house upon my back!\n
+ * first - function that prints a sentence before the main
+ * get excuted.
  *
- * Return: 0 success.
  */
 void first(void)
 {
