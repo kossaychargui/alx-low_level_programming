@@ -1,6 +1,32 @@
 #include "main.h"
 #include <ctype.h>
 #include <stdlib.h>
+#include <string.h>
+/**
+ * _pow_recursion - function that returns the value of x power y
+ *
+ * @x: first operand
+ * @y: second operand
+ *
+ * Return: the result .
+ */
+int _pow_recursion(int x, int y)
+{
+	if (y < 0)
+	{
+		return (-1);
+	}
+	if (y == 0)
+	{
+		return (1);
+	}
+	if (y == 1)
+	{
+		return (x);
+	}
+	y--;
+	return (x * _pow_recursion(x, y));
+}
 /**
  * binary_to_uint - function that converts a binary number to an unsigned int.
  * @b: string of 0 and 1 .
@@ -11,24 +37,20 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	int count;
 	unsigned int num;
-	int i;
+	int i, len;
 
-	i = 0;
 	num = 0;
-	count = 1;
 	if (b == NULL)
 	{
 		return (0);
 	}
-	while (*b)
+	len = strlen(b) - 1;
+	for (i = len; i >= 0; i--)
 	{
-		if (*(b + i) == 0)
+		if (isdigit(*(b + i)) != 0)
 		{
-		num += (atoi(*(b + i)) * count);
-		i++;
-		num *= 2;
+			num += ((int)*(b + i) - '0') * _pow_recursion(2, i);
 		}
 		else
 		{
