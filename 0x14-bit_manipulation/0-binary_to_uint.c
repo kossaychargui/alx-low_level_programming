@@ -50,7 +50,7 @@ unsigned int binary_to_uint(const char *b)
 	{
 		if (isdigit(*(b + i)) != 0)
 		{
-			num += ((int)*(b + i) - '0') * _pow_recursion(2, i);
+			num += (b[i] - '0') * _pow_recursion(2, i);
 		}
 		else
 		{
