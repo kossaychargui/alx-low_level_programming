@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdio.h>
-#include <stddef.h>
 #include <stdlib.h>
 /**
  * read_textfile - function that reads and prints a file to the POSTIX standard
@@ -15,9 +14,8 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	FILE *fptr;
-	ssize_t size = letters;
+	ssize_t size = letters, count;
 	char *buffer;
-	ssize_t count;
 	int i;
 
 	buffer = malloc(sizeof(char) * size);
