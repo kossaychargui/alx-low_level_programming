@@ -11,6 +11,8 @@
  */
 int main(int argc, char **argv)
 {
+	int i;
+	char buffer[1024];
 	int result1, result2;
 	FILE *f1, *f2;
 
@@ -31,7 +33,15 @@ int main(int argc, char **argv)
 		printf("Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
-	f2 = f1;
+	while (fgets(buffer, 1024, f1) != NULL)
+	{
+		i = 0;
+		while (buffer[i] != '\0')
+		{
+			fprintf(f1, "%c", buffer[i]);
+			i++;
+		}
+	}
 	result1 = fclose(f1);
 	if (result1 == -1)
 	{
