@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 /**
  * main - entry point of the program. program that copies the contentof a file
  * to another file.
@@ -10,9 +11,10 @@
  */
 int main(int argc, char **argv)
 {
+	int result1, result2;
 	FILE *f1, *f2;
 
-	if (argc != 2)
+	if (argc != 3)
 	{
 		printf("Usage: cp file_from file_to\n");
 		exit(97);
@@ -30,15 +32,15 @@ int main(int argc, char **argv)
 		exit(99);
 	}
 	f2 = f1;
-	resutl1 = fclose(f1);
+	result1 = fclose(f1);
 	if (result1 == -1)
 	{
 		printf("Error: Can't close fd %d\n", result1);
 	}
-	resutl2 = fclose(f2);
+	result2 = fclose(f2);
 	if (result2 == -1)
 	{
-		printf("Error: Can't close fd %d\n", restult2);
+		printf("Error: Can't close fd %d\n", result2);
 	}
 	return (0);
 }
