@@ -1,6 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
+ * close - function that closes a file and exits with 100 and prints an error
+ * message if closing failed.
+ *
+ * @f: file to close.
+ *
+ */
+void close(FILE *f)
+{
+	int restul;
+
+	resutl = fclose(f);
+	if (result == -1)
+	{
+		printf("Error: Can't close fd %d\n", result);
+		exit(100);
+	}
+}
+/**
  * main - entry point of the program. program that copies the contentof a file
  * to another file.
  *
@@ -13,7 +31,6 @@ int main(int argc, char **argv)
 {
 	int i;
 	char buffer[1024];
-	int result1, result2;
 	FILE *f1, *f2;
 
 	if (argc != 3)
@@ -38,19 +55,11 @@ int main(int argc, char **argv)
 		i = 0;
 		while (buffer[i] != '\0')
 		{
-			fprintf(f1, "%c", buffer[i]);
+			fprintf(f2, "%c", buffer[i]);
 			i++;
 		}
 	}
-	result1 = fclose(f1);
-	if (result1 == -1)
-	{
-		printf("Error: Can't close fd %d\n", result1);
-	}
-	result2 = fclose(f2);
-	if (result2 == -1)
-	{
-		printf("Error: Can't close fd %d\n", result2);
-	}
+	close(f1);
+	close(f2);
 	return (0);
 }
